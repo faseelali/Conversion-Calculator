@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:context=".MainActivity">
+
+        <ImageView
+            android:id="@+id/Input_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:importantForAccessibility="no"
+            app:layout_constraintBottom_toBottomOf="@id/Input_question"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/Input_question"
+            app:srcCompat="@drawable/ic_input" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/Input_question"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:text="@string/enter_input"
+            app:layout_constraintStart_toEndOf="@id/Input_icon"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/Enter_input"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/enter_value"
+                android:inputType="numberDecimal" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <ImageView
+            android:id="@+id/input_question_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:importantForAccessibility="no"
+            app:layout_constraintBottom_toBottomOf="@id/Unit_check_question"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/Unit_check_question"
+            app:srcCompat="@drawable/ic_input_question"/>
+
+        <TextView
+            android:id="@+id/Unit_check_question"
+            style="@style/Widget.ConversionCalculator.TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:text="@string/check_the_unit_of_entered_value"
+            app:layout_constraintBottom_toTopOf="@id/input_Options"
+            app:layout_constraintStart_toEndOf="@id/input_question_icon"
+            app:layout_constraintTop_toBottomOf="@id/Input_question" />
+
+        <RadioGroup
+            android:id="@+id/input_Options"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checkedButton="@id/Meter_button"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toStartOf="@id/Input_question"
+            app:layout_constraintTop_toBottomOf="@id/Unit_check_question">
+
+            <RadioButton
+                android:id="@+id/Meter_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="5dp"
+                android:text="@string/meter" />
+
+            <RadioButton
+                android:id="@+id/Inch_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="5dp"
+                android:text="@string/inch"
+                tools:ignore="DuplicateSpeakableTextCheck" />
+
+            <RadioButton
+                android:id="@+id/Feet_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="5dp"
+                android:text="@string/feet"
+                tools:ignore="DuplicateSpeakableTextCheck" />
+        </RadioGroup>
+
+        <ImageView
+            android:id="@+id/output_question_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:importantForAccessibility="no"
+            app:layout_constraintBottom_toBottomOf="@id/Output_question"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/Output_question"
+            app:srcCompat="@drawable/ic_output_question" />
+
+        <TextView
+            android:id="@+id/Output_question"
+            style="@style/Widget.ConversionCalculator.TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:text="@string/check_unit_of_output_value"
+            app:layout_constraintStart_toEndOf="@id/output_question_icon"
+            app:layout_constraintTop_toBottomOf="@id/input_Options" />
+
+        <RadioGroup
+            android:id="@+id/Output_options"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checkedButton="@id/Output_Meter_button"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toStartOf="@id/Output_question"
+            app:layout_constraintTop_toBottomOf="@id/Output_question">
+
+            <RadioButton
+                android:id="@+id/Output_Meter_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="5dp"
+                android:text="@string/meter" />
+
+            <RadioButton
+                android:id="@+id/Output_Inch_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:text="@string/inch" />
+
+            <RadioButton
+                android:id="@+id/Output_Feet_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="5dp"
+                android:text="@string/feet" />
+
+        </RadioGroup>
+
+        <Button
+            android:id="@+id/Calculate_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:text="@string/calculate"
+            app:layout_constraintEnd_toEndOf="@id/Output_options"
+            app:layout_constraintStart_toStartOf="@id/Output_options"
+            app:layout_constraintTop_toBottomOf="@+id/Output_options" />
+
+        <ImageView
+            android:id="@+id/Converted_value_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:importantForAccessibility="no"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="@id/Output_Result"
+            app:layout_constraintTop_toTopOf="@id/Output_Result"
+            app:srcCompat="@drawable/ic_output" />
+
+        <TextView
+            android:id="@+id/Output_Result"
+            style="@style/Widget.ConversionCalculator.TextView"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            tools:text="Converted Value: 0"
+            app:layout_constraintStart_toEndOf="@id/Converted_value_icon"
+            app:layout_constraintTop_toBottomOf="@id/Calculate_button" />
+
+        <com.google.android.material.switchmaterial.SwitchMaterial
+            android:id="@+id/roundUp_Button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/round_up"
+            android:layout_margin="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/Output_Result"
+            app:layout_constraintBottom_toBottomOf="@id/Output_Result"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

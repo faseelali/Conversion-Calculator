@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Conversion Calculator</string>
+    <string name="converted_value">Converted Value: %s</string>
+    <string name="meter">Meter</string>
+    <string name="feet">Feet</string>
+    <string name="inch">Inch</string>
+    <string name="calculate">Calculate</string>
+    <string name="enter_input">Enter Input!</string>
+    <string name="enter_value">Enter value</string>
+    <string name="check_the_unit_of_entered_value">Check the unit of entered value!</string>
+    <string name="check_unit_of_output_value">Check unit of output value</string>
+    <string name="round_up">Round Up?</string>
+</resources>
